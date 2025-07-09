@@ -35,6 +35,11 @@
 <script src="/js/lib/highlight.js"></script>
 
 
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
 
 <script src="/js/lib/preview.js"></script>
 
@@ -184,7 +189,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="color: #00bcd4">
+                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="color: #ffa2c4">
                     机器学习
                 </a>
             </span>
@@ -215,8 +220,50 @@
     </div>
     
     <div class="content" v-pre>
-        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>本文介绍机器学习在材料科学研究中的应用实例…</p>
-<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>随着人工智能技术的发展…</p>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>本文介绍机器学习在材料科学研究中的应用实例…  ,$\delta$,$ \delta$,$\delta $,$ \delta $<br>$$ \alpha  $$ </p>
+<p>$$\alpha$$ </p>
+<p>$$\alpha $$</p>
+<p>$$ \alpha$$</p>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><h2 id="迁移与扩散引起的物质传递"><a href="#迁移与扩散引起的物质传递" class="headerlink" title="迁移与扩散引起的物质传递"></a>迁移与扩散引起的物质传递</h2><h3 id="一般物质传递公式"><a href="#一般物质传递公式" class="headerlink" title="一般物质传递公式"></a>一般物质传递公式</h3><p>流量与电化学梯度有关 </p>
+<p>$$ \vec{J_j}&#x3D;-( \frac{ C_j D_j }{ RT } )\nabla  \overline{ \mu_j}  $$ </p>
+<p>在一维上， $  j_j(x)&#x3D;-( \frac{ C_j D_j }{ RT }) \frac{ \partial { \overline{ \mu_j}} }{ \partial {x} } $ ,如果溶液在流动，则增加 $ C_jv(x) $项</p>
+<p>当 $ a_j \approx C_j $ 时，得到能斯特-普朗克方程</p>
+<p>$$ J_j(x)&#x3D;-( \frac{ C_jD_j }{ RT }  )[ \frac{ \partial   }{ \partial {x}  } (RT \ln{C_j })+ \frac{ \partial   }{ \partial {x}   }  (z_j F \phi) ]+C_jv(x) $$ </p>
+<p>$$ j_j(x)&#x3D; -D_j \frac{ \partial { C_j(x) }}{ \partial {x}  } - \frac{ z_jF }{ RT } D_jC_j \frac{ \partial { \phi(x)}  }{ \partial {x}   } + C_jv(x)    $$ </p>
+<p>不考虑对流，物质j带电荷，流量 $ J_j $ 等价于电流密度，有</p>
+<p>$$ -J_j&#x3D; \frac{ i_j  }{ z_jFA } &#x3D; \frac{ i_{d,j} }{ z_j FA} + \frac{ i_{m,j}  }{ z_jFA }     $$ </p>
+<p>$ i_{d,j} ， i_{m,j}    $ 分别为扩散和迁移电流<br>$$ \frac{ i_{d,j} }{ z_jFA } &#x3D;D_j \frac{ \partial {C_j}  }{ \partial {x}  }    $$ </p>
+<p>$$ \frac{ i_{m,j} }{ z_jFA } &#x3D; \frac{ z_j FD_j }{ RT } C_j \frac{ \partial { \phi}  }{ \partial {x}  }     $$ </p>
+<p>总电流i为所有物质贡献组成</p>
+<p>$$ i&#x3D; \sum _{j }i_j $$</p>
+<p>$$ i&#x3D; \frac{ F^2A }{RT  } \times \frac{ \partial { \phi}  }{ \partial {x}  }\sum_j z_j^2D_jC_j+FA\sum z_jD_j \frac{ \partial {C_j}  }{ \partial {x}  }      $$  </p>
+<h4 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h4><p>在本体溶液中，浓度梯度较小，只考虑迁移项</p>
+<p>$$ i&#x3D; \frac{ F^2A }{RT  } \times \frac{ \partial { \phi}  }{ \partial {x}  }\sum_j z_j^2D_jC_j$$ </p>
+<hr>
+<p>定义淌度 $ \mu $ </p>
+<p>$$ \mu_j&#x3D; \frac{ z_jFD_j }{ RT } &#x3D; \frac{ |z_j|e }{ 6 \pi \eta r }    $$ </p>
+<p>对于线性电场 $ \frac{ \partial { \phi}  }{ \partial {x}  }  &#x3D; \frac{ \Delta E }{ l }   $ ,</p>
+<p>$$ i&#x3D; \frac{ FA \Delta E }{l  } \sum _{j} |z_j| \mu_j C_j   $$ </p>
+<p>$$ L&#x3D; \frac{ 1 }{ R } &#x3D; \frac{ A }{ l } \kappa    $$ </p>
+<p>$$ \kappa &#x3D;F \sum _{j} |z_j| \mu_j C_j   $$ </p>
+<p>指定离子的电流在总电流中的分数为迁移数$t_j$</p>
+<p>$$ t_j&#x3D; \frac{ i_j }{ i }  &#x3D; \frac{ |z_j| \mu_j C_j }{ \sum _{k}|z_k| \mu_k C_k  }&#x3D; \frac{ |z_j| \lambda_j C_j }{ \sum _{k}|z_k| \lambda_k C_k  }  $$</p>
+<h4 id="电极附近的迁移扩散"><a href="#电极附近的迁移扩散" class="headerlink" title="电极附近的迁移扩散"></a>电极附近的迁移扩散</h4><p>忽略迁移电流</p>
+<p><img src="https://alipic-dmy2084.oss-cn-qingdao.aliyuncs.com/202506131617241.png"><br>$$ \pm \frac{ i_m }{ nF } &#x3D; \frac{ t_j i }{ z_i F }    $$ </p>
+<p>$$ i_m &#x3D;\pm \frac{ n }{ z_j } t_i i  $$ </p>
+<p>$$ i_d&#x3D; i(1-\mp \frac{ nt_j }{ z_j }  ) $$ </p>
+<p>负号用于阴极电流</p>
+<p><img src="https://alipic-dmy2084.oss-cn-qingdao.aliyuncs.com/202506131643975.png"></p>
+<hr>
+<p><img src="https://alipic-dmy2084.oss-cn-qingdao.aliyuncs.com/202506131645512.png"></p>
+<p>加入过量支持电解质，消除了迁移对物质传递 的影响</p>
+<h4 id="扩散"><a href="#扩散" class="headerlink" title="扩散"></a>扩散</h4><p>随机散步模型</p>
+<p>def 均方根位移 $ \overline{ \Delta }&#x3D; \sqrt{ 2Dt }  $</p>
+<p>Fick第一定律<br>$$ J_O(x,t)&#x3D;D_O \frac{ \partial {C_O(x,t)}  }{ \partial {x}   }   $$ </p>
+<p>$$ D_O&#x3D; \frac{ \Delta x^2 }{ 2 \Delta t }   $$ </p>
+<p>Fick第二定律</p>
+<p> $$ \frac{ \partial {C_O(x,t)}  }{ \partial {t}   } &#x3D; D_O [ \frac{ \partial ^2{C_O(x,t)}  }{  \partial {x^2} }  ]  $$<br> 当 $ D_O $是x的函数时，<br> $$ \frac{ \partial {C_O(x,t)}  }{ \partial {t}   } &#x3D; \frac{ \partial {}  }{ \partial {x}  } [D_O ( \frac{ \partial {C_O(x,t)}  }{ \partial {x}  }  )]   $$   </p>
+<hr>
 
     </div>
     
