@@ -186,6 +186,122 @@
         
 
 <div class="post">
+    <a href="/2025/07/09/%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4/">
+        <h2 class="post-title">线性代数第一讲，线性空间</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                数学基础
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/7/9
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="线性空间"><a href="#线性空间" class="headerlink" title="线性空间"></a>线性空间</h1><h2 id="线性空间与子空间"><a href="#线性空间与子空间" class="headerlink" title="线性空间与子空间"></a>线性空间与子空间</h2><p>$ \mathbb{R}^3  $上的直线可以用两个常数向量的线性组合表示，类似的，如果一个集合中可以定义“加法”和“数乘”两个运算，就称其为线性空间。</p>
+<blockquote>
+<p>定义，线性空间</p>
+</blockquote>
+<p>一个数域 k($k&#x3D;\mathbb{R}$ 或者$k&#x3D;\mathbb{C}$ )上的线性空间(或称向量空间)指的是一个集合 V 以及二元运算<br>$$\text{加法: } V \times V \xrightarrow{\oplus} V \quad \text{数乘: } k \times V \rightarrow V$$<br>使得对任何 $u,v,w\in V,a,b\in k$,下列性质成立:</p>
+<ol>
+<li>加法交换律: $u+v&#x3D;v+u$</li>
+<li>加法结合律: $(u+v)+w&#x3D;u+(v+w)$</li>
+<li>零元素: 存在唯一元素 $0\in V$ 使得 $0+u&#x3D;u$</li>
+<li>负元素: 存在唯一的 $−u\in V$ 使得 $u+(−u)&#x3D;0$</li>
+<li>单位元: 对 $k$ 中的单位元 1, 满足 $1u&#x3D;u$</li>
+<li>数乘结合律: $a(bu)&#x3D;(ab)u$</li>
+<li>分配律(向量加法): $a(u+v)&#x3D;au+av$</li>
+<li>分配律(数量加法): $(a+b)u&#x3D;au+bu$<br>线性空间 V 中的元素称为一个向量。<br>如不特殊说明, 我们考虑实线性空间(即 $ k&#x3D;\mathbb{R} $ )。</li>
+</ol>
+<p>易知， $ \mathbb{R}^3 $ 是一个线性空间</p>
+<blockquote>
+<p>例子，所有一元多项式组成的集合是线性空间 $ \mathbb{R}[x] $，所有一元光滑函数构成的空间 $ C^{ \infty}( \mathbb{R}) $   </p>
+</blockquote>
+<hr>
+<h2 id="直和"><a href="#直和" class="headerlink" title="直和"></a>直和</h2><blockquote>
+<p>定义，线性空间</p>
+</blockquote>
+<p>对于给定的线性空间 $ V,W $<br>$$ V \oplus W&#x3D; { (v,w)|v \in V, w \in W} $$<br>这个运算称为直和，得到一个新的线性空间。</p>
+<p>加法 $ (v_1,w_1)+ (v_2,w_2)&#x3D; (v_1+v_2,w_1+w_2) $</p>
+<p>数乘 $ \lambda (v,w)&#x3D;( \lambda v, \lambda w) $</p>
+<p>类似的可定义n项直和， $ V_1 \oplus V_2 \oplus \cdots \oplus V_m $,<br>直和中的元素可以表示为一向量$ (u_1, \cdots, u_i),u_i \in V_i $ </p>
+<p>易知, $ \mathbb{R}^n  $是n个 $ \mathbb{R}  $的直和<br>,$ \mathbb{R}^n&#x3D; \mathbb{R}^m + \mathbb{R}^k,n&#x3D;m+k    $ </p>
+<hr>
+<h2 id="线性子空间"><a href="#线性子空间" class="headerlink" title="线性子空间"></a>线性子空间</h2><blockquote>
+<p>定义，线性子空间</p>
+</blockquote>
+<p>$ V $是数域k(实数，复数等)上的线性空间， $ V $ 的一个子集 $ W $是 $ V $ 的一个线性子空间。</p>
+<p>$ W $需要包括 $ V $ 的零元素，且 $ W $ 的元素在加法和数乘下封闭（即运算后的元素仍在 $ W $内 ）</p>
+<blockquote>
+<p>$ V $的线性子空间是线性空间 　</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>例子，过原点的直线是 $ \mathbb{R}^2   $的一个线性子空间，不过原点的直线不包含零元素（0,0）</p>
+</blockquote>
+<hr>
+<h2 id="线性组合与线性相关"><a href="#线性组合与线性相关" class="headerlink" title="线性组合与线性相关"></a>线性组合与线性相关</h2><h3 id="线性组合"><a href="#线性组合" class="headerlink" title="线性组合"></a>线性组合</h3><p>线性空间中的元素可以由更简单的元素通过线性组合得到，如三维矢量由坐标点给出</p>
+<blockquote>
+<p>定义 ,线性组合</p>
+</blockquote>
+<p> 设 $\mathbf{v}_1, \cdots, \mathbf{v}_m \in V$, $\lambda_1, \cdots, \lambda_m \in k$. 则向量<br>$$\mathbf{u} &#x3D; \lambda_1 \mathbf{v}_1 + \cdots + \lambda_m \mathbf{v}_m$$<br>称为向量 $\mathbf{v}_1, \cdots, \mathbf{v}_m$ 的线性组合, 或者称 $\mathbf{u}$ 可以由 $\mathbf{v}_1, \cdots, \mathbf{v}_m$ 线性表达. 所有可以由 $\mathbf{v}_1, \cdots, \mathbf{v}_m$ 线性表达的向量构成的集合记为<br>$$<br>\operatorname{Span}{\mathbf{v}_1, \cdots, \mathbf{v}_m}$$</p>
+<blockquote>
+<p>命题 $\operatorname{Span}{\mathbf{v}_1, \cdots, \mathbf{v}_m}$ 是 $V$ 的线性子空间.</p>
+</blockquote>
+<blockquote>
+<p>例子1， $ \mathbb{R}^3  $中两个常矢量线性组合张成的平面记作 $ \operatorname{Span} { \vec{u}, \vec{v} } $<br>例子2，微分方程 $ f’’(x)+f(x)&#x3D;0 $的解系为 $ \operatorname{Span}{ \cos x,sin x }$</p>
+</blockquote>
+<p>为了分析线性表示的唯一性，需要引入线性相关的概念</p>
+<hr>
+<h3 id="线性相关性"><a href="#线性相关性" class="headerlink" title="线性相关性"></a>线性相关性</h3><blockquote>
+<p>定义</p>
+</blockquote>
+<p>$ V $中的若干元素是线性相关的，则有不全为零的系数使得<br>$$ \lambda _{1} v_1+ \cdots + \lambda _{m}v_m&#x3D;0   $$<br>否则这些元素线性无关  </p>
+<blockquote>
+<p>命题，线性相关的一组向量中其中一个向量可以被其他向量线性表示</p>
+</blockquote>
+<p>可知，从线性相关向量组去除一个向量后，其余的向量不再线性相关，我们可以理解为线性相关向量组包括了冗余的线性信息，可以描述其中的元素。</p>
+<hr>
+<h3 id="线性无关性"><a href="#线性无关性" class="headerlink" title="线性无关性"></a>线性无关性</h3><p>一组向量线性无关的等价表示为，这组向量只有在系数全为0时才能相加为0。</p>
+<blockquote>
+<p>例子 $ \mathbb{R}^3  $上的一组正交基是线性无关的</p>
+</blockquote>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="color: #03a9f4">线性代数</a>
+        </span>
+        
+    </div>
+    <a href="/2025/07/09/%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2025/07/02/%E7%A4%BA%E4%BE%8B/">
         <h2 class="post-title">材料科学中的机器学习应用</h2>
     </a>
@@ -270,22 +386,22 @@
         
         <span class="tag">
             
-            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="color: #00a596">机器学习</a>
+            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="color: #ff7d73">机器学习</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97/" style="color: #ff7d73">材料计算</a>
+            <a href="/tags/%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97/" style="color: #00a596">材料计算</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Python/" style="color: #00a596">Python</a>
+            <a href="/tags/Python/" style="color: #ff7d73">Python</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" style="color: #ff7d73">数据分析</a>
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" style="color: #00a596">数据分析</a>
         </span>
         
     </div>
